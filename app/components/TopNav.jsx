@@ -8,11 +8,19 @@ import { useSDK } from "@metamask/sdk-react"
 import Jazzicon from "react-jazzicon"
 import { ethers } from "ethers"
 
+// Rwdux
+import { useAppDispatch, useAppSelector } from "@/lib/hooks"
+import { setAccount, setBalance } from "@/lib/features/user/user"
+import {
+    selectAccount,
+    selectETHBalance,
+} from "@/lib/selectors"
+
 // Import hooks
 import { useProvider } from "@/app/hooks/useProvider"
 
 // Import assets
-import { network } from "@/app/assets/other/network.svg"
+import  network  from "@/app/assets/other/network.svg"
 
 // Import config
 import config from "@/app/config.json"
@@ -22,8 +30,9 @@ import config from "@/app/config.json"
     const { sdk, provider: metamask, chainId } = useSDK()
     const { provider } = useProvider()
 
-    const [ account, setAccount] = useState("")
-    const [balance, setBalance] = useState("")
+    const dispatch = useAppDispatch()
+    const account = useAppSelector(selectAccount)
+    const balance = useAppSelector(selectETHBalance)
 
     async function connectHandler() {
         try{
@@ -37,7 +46,7 @@ import config from "@/app/config.json"
     async function networkHandler(e) {
         await metamask.request({
             method: 'wallet_switchEthereumChain',
-            params: [{ chainId: e.target.value }]
+            params: [{ chainId: e.target.value }],
         })
     }
 
@@ -47,17 +56,17 @@ import config from "@/app/config.json"
         const balance = await provider.getBalance(account)
 
         // Store the values in the state
-        setAccount(account.address)
-        setBalance(ethers.formatUnits(balance, 18))
+        dispatch(setAccount(account.address))
+        dispatch(setBalance(ethers.formatUnits(balance, 18)))
     }
     
     useEffect(() => {
 
         if(sdk && metamask) {
             // Create event listener
-            metamask.on("accountChanged", async (accounts) => {
+            metamask.on("accountsChanged", async (accounts) => {
                 if (accounts.length === 0) {
-                    // No account are connected
+                     // No account are connected
                     setAccount(null)
                     setBalance(0)
                 } else {
@@ -80,7 +89,7 @@ import config from "@/app/config.json"
         <nav className="topnav">
            <div className="network">
                 <lebel className="icon" htmlFor="network">
-                    <image src={network} alt="Select network" />
+                    <Image src={network} alt="Select network" />
                 </lebel>
                 <div className="select">
                     <select
@@ -109,7 +118,7 @@ import config from "@/app/config.json"
                     className="link"
                 >
                     {account.slice(0,6) + "..." + account.slice(38,42)}
-                    <Jazzicon diameter={44} seed={account}/>
+                    <Jazzicon diameter={44} seed={account} />
                 </a>
             )   :   (
                 <button onClick={connectHandler} className="button">
