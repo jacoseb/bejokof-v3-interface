@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+const { useState, useEffect } = require( "react")
 import { ethers } from "ethers"
 
 // Custom hooks
@@ -23,7 +23,7 @@ export function useTokens() {
         const contract = new ethers.Contract(token.address, TOKEN, provider)
         contracts[token.address] = contract
       })
-
+ 
       setTokens(contracts)
     }
   }, [provider])

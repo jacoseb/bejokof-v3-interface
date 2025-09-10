@@ -14,48 +14,48 @@ import swap from "@/app/assets/links/swap.svg"
 import loans from "@/app/assets/links/loans.svg"
 
 function SideNav() {
-    const path = usePathname()
+  const path = usePathname()
 
-    const link = [
-        { href: "/wallet", label: "Wallet", image: wallet },
-        { href: "/", label: "Trading", image: trading },
-        { href: "/swap", label: "Swap", image: swap },
-        { href: "/loans", label: "Loans", image: loans },
-    ]
+  const links = [
+    { href: "/wallet", label: "Wallet", image: wallet },
+    { href: "/", label: "Trading", image: trading },
+    { href: "/swap", label: "Swap", image: swap },
+    { href: "/loans", label: "Loans", image: loans },
+  ]
 
-    return(
-        <nav className="sidenav">
-            <div className="logo">
-                <Image src={logo} alt="logo" />
-                <p>KBC Exchange</p>
-            </div>
+  return (
+    <nav className="sidenav">
+      <div className="logo">
+        <Image src={logo} alt="Logo" />
+        <p>KBC Exchange</p>
+      </div>
 
-            <button className="toggle">
-                <Image src={collapse} alt="Collapse" />
-            </button>
+      <button className="toggle">
+        <Image src={collapse} alt="Collapse" />
+      </button>
 
-            <ul className="links">
-                {link.map((link, index)=> (
-                <li key={index}>
-                    <Link href={link.href} className={`link ${path === link.href ? "link--active" : ""}`}>
-                        <div className="label">
-                            <div className="icon">
-                                <Image src={link.image} alt={link.label}/>
-                            </div>
-                            <span>
-                                {link.label}
-                            </span>
-                        </div>
+      <ul className="links">
+        {links.map((link, index) => (
+          <li key={index}>
+            <Link href={link.href} className={`link ${path === link.href ? "link--active" : ""}`}>
+              <div className="label">
+                <div className="icon">
+                  <Image src={link.image} alt={link.label} />
+                </div>
+                <span>
+                  {link.label}
+                </span>
+              </div>
 
-                        <div className="arrow">
-                            <Image src={expand} alt="Link" />
-                        </div>
-                    </Link>
-                </li>
-                ))}                
-            </ul>
-        </nav>
-    );
+              <div className="arrow">
+                <Image src={expand} alt="Link" />
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 }
 
 export default SideNav;

@@ -6,7 +6,7 @@ import { BrowserProvider } from "ethers"
 export function useProvider() {
     const [provider, setProvider] = useState(null)
 
-    const { sdk, chainID } = useSDK()
+    const { sdk, chainId } = useSDK()
 
     useEffect(() => {
         if (sdk) {
@@ -15,5 +15,5 @@ export function useProvider() {
             setProvider(provider)
         }
     },   [sdk])
-    return { provider, chainID }
+    return { provider, chainId }
 }

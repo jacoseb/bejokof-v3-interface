@@ -88,9 +88,9 @@ import config from "@/app/config.json"
     return(
         <nav className="topnav">
            <div className="network">
-                <lebel className="icon" htmlFor="network">
+                <label className="icon" htmlFor="network">
                     <Image src={network} alt="Select network" />
-                </lebel>
+                </label>
                 <div className="select">
                     <select
                       name="network"
