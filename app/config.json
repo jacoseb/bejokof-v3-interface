@@ -1,6 +1,4 @@
 {
-
-
     "31337":{
         "exchange": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
         "tokens": [
@@ -32,8 +30,39 @@
                     "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
                 ]
             }
-
+        ]
+    },
+    "4":{
+        "exchange": "0xFd6FE1726da804747956ea3E5e48064840f653c5",
+        "tokens": [
+            {
+                "name": "KBC",
+                "address": "0xf45209Cf95eC121631837917aDd39FAADB8335Bf"
+            },
+            {
+                "name": "mUSDC",
+                "address": "0xbEdDeFf95Fac01CC276d83E24B960AD9CAB9bCD2"
+            },
+            {
+                "name": "mLINK",
+                "address": "0xe80953C6c1faB2C4676b02144ce67F1f06fE2024"
+            }
+        ],   
+        "markets": [
+            {
+                "name": "KBC / mUSDC",
+                "tokens": [
+                    "0xf45209Cf95eC121631837917aDd39FAADB8335Bf",
+                    "0xbEdDeFf95Fac01CC276d83E24B960AD9CAB9bCD2"
+                ]
+            },
+            {
+                "name": "KBC / mLINK",
+                "tokens": [
+                    "0xf45209Cf95eC121631837917aDd39FAADB8335Bf",
+                    "0xe80953C6c1faB2C4676b02144ce67F1f06fE2024"
+                ]
+            }
         ]
     }
-
 }
