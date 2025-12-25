@@ -1,7 +1,6 @@
 :root {
   --background: #033538;
   --foreground: #FFFFFF;
-
   --clr-black: #050505;
   --clr-white: #FFFFFF;
   --clr-gray: #686868;
@@ -629,12 +628,12 @@ form input[type="submit"]:hover {
 
 .sidenav .links li .link--active {
   opacity: 1;
-  background: linear-gradient(90deg, var(--clr-orange), 20%, var(--clr-black));
+  background: linear-gradient(358deg, #096d0d, 20%, #04343f);
 }
 
 .sidenav .links li .link--active .label .icon {
   border: none !important;
-  background-color: var(--clr-orange);
+  background-color: #108711
 }
 
 .sidenav .links li .link .label {
