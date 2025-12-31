@@ -12,7 +12,7 @@ import TopNav from './components/TopNav'
 import SideNav from './components/SideNav'
 
 export const metadata = {
-  title: "KBC Exchange",
+  title: "BKJ Dapp Exchange",
   description: "Your Secured Cryptocurrency Exchange",
 };
 
