@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 // Import assets
-import logo from "@/app/assets/logo.png"
+import logo1 from "@/app/assets/logo1.png"
 import collapse from "@/app/assets/carets/collapse.svg"
 import expand from "@/app/assets/carets/expand.svg"
 import wallet from "@/app/assets/links/wallet.svg"
@@ -26,8 +26,8 @@ function SideNav() {
   return (
     <nav className="sidenav">
       <div className="logo">
-        <Image src={logo} alt="Logo" />
-        <p>KBC Exchange</p>
+        <Image src={logo1} alt="https://bejokof-v3-interface-ten.vercel.app" />
+        <p>BKJ Dapp Exchange</p>
       </div>
 
       <button className="toggle">
